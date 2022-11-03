@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+    /* #can_i_do{
+        background-color: rgb(213, 184, 240);
+    color: rgb(0, 0, 0);} */
+    *{
+        box-sizing: border-box;
+    }
+    h1{width: 70%;
+    margin: 20px;}
+    .title-with-list{
+        background-color:aqua;
+      color:blue;
+    }
+      .title-with-list__title{
+      color:brown;
+    }
+      .title-with-list__list{
+      color:rgb(0, 0, 0);
+    }
+      .bg-color-blue{
+        background-color: blue;
+       }
+      .text-color-red{
+       color: red;
+      } 
+      .text-color-brown{
+       color: brown;
+      } 
+      .text-color-aqua{
+        color: aqua;
+      } 
+      div{
+        color:deeppink;
+        background-color: deepskyblue;
+      }
+      button[type="submit"]{
+        border: 3px solid green;
+      }
+      button:hover{
+        border: 6px solid plum;
+      }
+      .title-with-list{
+        border-style: inset;
+      }
+  

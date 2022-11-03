@@ -1,0 +1,97 @@
+input[type=text],input[type=email],input[type=namber], select, textarea, email{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+ }
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    float:left;
+
+  }
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+button:hover{
+    border: 4px solid plum;
+    outline:auto;
+    
+  }
+button:active{
+box-shadow: inset 0 0 5px rgba(0, 0, 0, .5);
+}
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(18, 236, 55);
+}
+
+.menu li {
+    float: left;
+}
+
+.menu li a {
+    display: block;
+    color: rgb(107, 107, 107);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+section{
+    text-align: center;
+}
+.zagolovok{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+tbody tr:nth-child(odd) {
+    background-color: #bdbcbc;
+  }
+  
+tbody tr:nth-child(even) {
+    background-color: #eeeeee;
+  }
+table {
+    align-self: center;
+    width: 100%;
+    height: 200px;
+    background-color: #15e920;}
+table thead{
+        background-color: #ccc;
+    }
+
+@media screen and (max-width: 425px) {
+    .col-25, .col-75, button {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
