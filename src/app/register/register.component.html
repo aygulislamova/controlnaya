@@ -1,0 +1,187 @@
+<form (ngSubmit)="onSubmit( )" #form="ngForm">
+    <h1 class="h3 mb-3 fw-normal">Регистрация</h1>
+     <div class="form-floating">
+      <input 
+      type="text" 
+      name="name" 
+      class="form-control" 
+      id="name" 
+      placeholder="Имя" 
+      [(ngModel)]="user.name"
+      #name="ngModel"
+      required
+      maxlength="20"
+     />
+      <label for="name">Имя</label>
+    </div>
+   <div *ngIf="(name.invalid && name.touched)  || name.dirty">
+      <div class="alert alert-danger" *ngIf="name.errors?.['required']">Требуется имя</div>
+   </div>
+   <div class="alert alert-danger" *ngIf="name.errors?.['maxlength']">
+      Максимум 20 символов
+   </div>
+
+
+   <div class="form-floating">
+      <input 
+      type="text" 
+      name="surname" 
+      class="form-control" 
+      id="surname" 
+      placeholder="Фамилия" 
+      [(ngModel)]="user.surname"
+      #surname="ngModel"
+      required
+      maxlength="20"
+       />
+      <label for="surname">Фамилия</label>
+   </div>
+   <div *ngIf="(surname.invalid && surname.touched)  || surname.dirty">
+      <div class="alert alert-danger" *ngIf="surname.errors?.['required']">
+        Требуется фамилия</div>
+   </div>
+   <div class="alert alert-danger" *ngIf="surname.errors?.['maxlength']">
+    Максимум 20 символов
+   </div>
+
+
+     <div class="form-floating">
+      <input 
+      type="text" 
+      name="patronymic" 
+      class="form-control" 
+      id="patronymic" 
+      placeholder="Отчество" 
+      [(ngModel)]="user.patronymic"
+      #patronymic="ngModel"
+      />
+      <label for="patronymic">Отчество</label>
+    </div>
+
+
+    <div class="form-floating">
+      <input
+       type="email" 
+       name="email"
+       class="form-control" 
+       id="email"
+       placeholder="name@example.com"
+       [(ngModel)]="user.email"
+       required
+       email
+       maxlength="300"
+       #email="ngModel"/>
+      <label for="email">Email</label>
+    </div>
+    <div *ngIf="(email.invalid && email.touched) || email.dirty">
+      <div class="alert alert-danger" *ngIf="email.errors?.['required']">
+        Требуется email
+     </div>
+     <div class="alert alert-danger" *ngIf="email.errors?.['email']">
+        Email введен неправильно
+     </div>
+     <div class="alert alert-danger" *ngIf="email.errors?.['maxlength']">
+      Максимум 300 символов
+     </div>
+    </div>
+
+
+    <div class="form-floating">
+      <input 
+      type="password" 
+      name="password"
+     class="form-control"
+      id="password"
+      placeholder="Пароль"
+      #password="ngModel"
+     [(ngModel)]="user.password"
+      required
+      minlength="10"
+      maxlength="300"/>
+      <label for="password">Пароль</label>
+    </div>
+    <div *ngIf="(password.invalid && password.touched)  || password.dirty">
+      <div class="alert alert-danger" *ngIf="password.errors?.['required']">
+         Требуется пароль
+      </div>
+      <div class="alert alert-danger" *ngIf="password.errors?.['minlength']">
+         Минимум 10 символов
+      </div>
+      <div class="alert alert-danger" *ngIf="password.errors?.['maxlength']">
+         Максимум 300 символов
+     </div>
+     </div> 
+
+
+    <div class="form-floating">
+      <input 
+      type="password" 
+      name="passwordConfirm"
+     class="form-control"
+      id="passwordConfirm"
+      placeholder="Подтверждение пароля"
+      #passwordConfirm="ngModel"
+     [(ngModel)]="user.passwordConfirm"
+      required
+     minlength="10"
+     maxlength="300"
+     />
+      <label for="passwordConfirm">Подтверждение пароля</label>
+    </div>
+    <div *ngIf="(passwordConfirm.invalid && passwordConfirm.touched)  || passwordConfirm.dirty">
+      <div class="alert alert-danger" *ngIf="passwordConfirm.errors?.['required']">
+        Требуется подтверждение пароля
+      </div>
+      <div class="alert alert-danger" *ngIf="passwordConfirm.errors?.['minlength']">
+        Минимум 10 символов
+     </div>
+     <div class="alert alert-danger" *ngIf="passwordConfirm.errors?.['maxlength']">
+       Максимум 300 символов
+    </div>
+      <div class="alert alert-danger" *ngIf="passwordConfirm.value != password.value">
+        Пароли не совпадают
+      </div>
+     </div> 
+
+
+     <div class="form-floating">
+      <input type="date" 
+      name="data" 
+      class="form-control" 
+      id="data" 
+      min="1900-01-01"
+      max="2015-01-01"
+      placeholder="Дата рождения" 
+      [(ngModel)]="user.data"
+      #data="ngModel"
+      />
+      <label for="data">Дата рождения</label>
+      </div>
+      <div *ngIf="(data.invalid && data.touched)  || data.dirty">
+        <div class="alert alert-danger" *ngIf="data.value< '1900-01-01'">
+           Min date is 01.01.1900
+        </div>
+        <div class="alert alert-danger" *ngIf="data.value> '2015-01-01'">
+           Max date is 01.01.2015
+        </div>
+      
+    </div>
+
+
+    <div class="form-floating">
+        <select class="form-select"
+         name="sex"
+         id="sex"
+         [(ngModel)]="user.sex"  >
+          <!-- <option selected>Select sex</option> -->
+          <option value="male">Мужской</option>
+          <option value="female">Женский</option>
+        </select>
+        <label for="sex">Пол</label>
+  
+    </div>
+
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit"  >Зарегистрироваться</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2022–2022</p>
+</form>
