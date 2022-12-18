@@ -1,23 +1,178 @@
 <div class="container">
   <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        
-    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-       <li><a routerLink="" class="nav-link px-2 link-secondary">Главная</a></li>
-       <li><a routerLink="posts" class="nav-link px-2 link-dark">Посты</a></li>
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a routerLink="" class="nav-link active" aria-current="page">Главная</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="cars" class="nav-link">Список машин</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="add" class="nav-link" >Добавить машину</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="aboutme" class="nav-link">Обо мне</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="car/:id" class="nav-link">Машина</a>
+      </li>
     </ul>
-
-    <button (click)="updateLoggedIn()" type="button" class="btn btn-outline-secondary me-2">Обновить данные</button>
-      
-    <div class="col-md-3 text-end" *ngIf="!isLoggedIn; else loggedIn">
-     <a routerLink="login" type="button" class="btn btn-outline-primary me-2">Войти</a>
-     <a routerLink="register" type='button' class="btn btn-primary">Регистрация</a>
-    </div>
-    <ng-template #loggedIn>
-      <p> {{username}}</p>
-      <button  type="button" class="btn btn-danger" (click)="logout()">Выход</button>
-    </ng-template>
   </header>
   <main class="container">
        <router-outlet></router-outlet>
   </main>
 </div>
+<!-- <div>
+  <p *ngFor="let humanName of people">
+    Hey {{humanName}}, we glad to see you!
+  </p>
+</div>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label>FirstName
+      <input formControlName="firstName" />
+    </label>
+  </p>
+  <p>
+    <label>
+      LastName
+      <input formControlName="lastName" />
+    </label>
+  </p>
+  <!-- <div>
+    <label>
+      UserPhone
+      <input formControlName="userPhone" />
+    </label>
+    <p *ngIf="getUserPhoneControl.touched && getUserPhoneControl.invalid">
+      Неверный номер телефона
+    </p>
+  </div> -->
+  <!-- <button [disabled]="profileForm.invalid" type="submit">Confirm</button>
+</form>
+
+<div>
+  <p *ngFor="let humanName of people">
+    <a 
+    [routerLink]="['user', humanName]"
+    [queryParams]="{primeName: 'Prime'}"
+    >{{humanName}}</a>
+  </p>
+</div> -->
+
+
+
+<!-- <router-outlet></router-outlet> --> -->
+
+
+
+
+<!-- <div>
+  <p *ngFor="let car of cars">
+    Hey {{car}}, we glad to see you!
+  </p>
+</div>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label>BrendName
+      <input formControlName="brendName" />
+    </label>
+  </p>
+  <p>
+    <label>
+      ModelName
+      <input formControlName="modelName" />
+    </label>
+  </p>
+  <p>
+    <label>
+      PriceInRub
+      <input formControlName="priceInRub" />
+    </label>
+  </p>
+  <!-- <div>
+    <label>
+      UserPhone
+      <input formControlName="userPhone" />
+    </label>
+    <p *ngIf="getUserPhoneControl.touched && getUserPhoneControl.invalid">
+      Неверный номер телефона
+    </p>
+  </div> -->
+  <!-- <button [disabled]="profileForm.invalid" type="submit">Confirm</button>
+</form>
+
+<div>
+  <p *ngFor="let car of cars">
+    <a 
+    [routerLink]="['car']"
+    [queryParams]="{primeName: 'Prime'}"
+    >{{car}}</a>
+  </p> -->
+<!-- </div> --> -->
+<div class="container mt-6">
+  <!-- <app-add-car (outEnterName)="addName($event)"></app-add-car> -->
+
+  <!-- <div class="students_list mt-6">
+    <h2 class="subtitle">Список студентов:</h2>
+    <ul class="list">
+      <li class='list-item mb-1 mt-1' *ngFor="let student of students">
+        <app-cars [student]="student"></app-cars>
+      </li>
+    </ul>
+  </div> -->
+<!-- </div>
+<div class="input_wrapper">
+  <input type="text" class="input mr-2" placeholder="Введите имя" #nameInput>
+  <button routerLink="/cars" class="button" (click)="enterName(nameInput)">
+    Добавить студента
+  </button>
+</div>
+
+
+
+<router-outlet></router-outlet> -->
+<div>
+  <p *ngFor="let humanName of people">
+    Hey {{humanName}}, we glad to see you!
+  </p>
+</div>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label>FirstName
+      <input formControlName="firstName" />
+    </label>
+  </p>
+  <p>
+    <label>
+      LastName
+      <input formControlName="lastName" />
+    </label>
+  </p>
+  <!-- <div>
+    <label>
+      UserPhone
+      <input formControlName="userPhone" />
+    </label>
+    <p *ngIf="getUserPhoneControl.touched && getUserPhoneControl.invalid">
+      Неверный номер телефона
+    </p>
+  </div> -->
+  <button [disabled]="profileForm.invalid" type="submit">Confirm</button>
+</form>
+
+<div>
+  <p *ngFor="let humanName of people">
+    <a 
+    [routerLink]="['user', humanName]"
+    [queryParams]="{primeName: 'Prime'}"
+    >{{humanName}}</a>
+  </p>
+</div>
+
+
+
+<router-outlet></router-outlet>
