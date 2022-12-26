@@ -1,25 +1,17 @@
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class CarService {
-//  car = []
-
-// }
-
-
 import { Injectable } from '@angular/core';
+import { Car } from './models';
 
 @Injectable()
 export class CarService {
-  data = ["Tom", "Bob"]
+  car = ["bmw", "bmw2"]
+  
   constructor() { }
-  getData(){
-    return [...this.data]
+  getCar(){
+    return [...this.car]
   }
-  addData(name: string) {
-    this.data.push(name)
+  addCar(brend: string, ) {
+    this.car.push(brend)
+   
   }
 }
 

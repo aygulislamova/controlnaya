@@ -1,94 +1,87 @@
-<!-- <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" #form="ngForm">
-  <h1 class="h3 mb-3 fw-normal">Добавить машину</h1>
-   <div class="form-floating">
-    <input 
-    type="text" 
-    name="brend" 
-    class="form-control" 
-    id="brend" 
-    placeholder="Имя" 
-    [(ngModel)]="car.brend"
-    #brend="ngModel"
-    required
-    maxlength="10"
-    minlength="3"
-   />
-    <label for="brend">brend</label>
-  </div>
- <div *ngIf="(brend.invalid && brend.touched)  || brend.dirty">
-    <div class="alert alert-danger" *ngIf="brend.errors?.['required']">Требуется brend</div>
- </div>
- <div class="alert alert-danger" *ngIf="brend.errors?.['maxlength']">
-    Максимум 10 символов
- </div>
- <div class="alert alert-danger" *ngIf="brend.errors?.['minlength']">
-    минимум 3 символов
- </div>
- 
-
- <div class="form-floating">
-    <input 
-    type="text" 
-    name="model" 
-    class="form-control" 
-    id="model" 
-    placeholder="model" 
-    [(ngModel)]="car.model"
-    #model="ngModel"
-    required
-    maxlength="10"
-    minlength="3"
-     />
-    <label for="model">model</label>
- </div>
- <div *ngIf="(model.invalid && model.touched)  || model.dirty">
-    <div class="alert alert-danger" *ngIf="model.errors?.['required']">
-      Требуется model</div>
- </div>
- <div class="alert alert-danger" *ngIf="model.errors?.['maxlength']">
-  Максимум 10 символов
- </div>
- <div class="alert alert-danger" *ngIf="model.errors?.['minlength']">
-  min 3 символов
- </div>
-
-
-  <div class="form-floating">
-    <input 
-    type="namber" 
-    name="price"
-   class="form-control"
-    id="price"
-    placeholder="price"
-    #price="ngModel"
-   [(ngModel)]="car.price"
-    required
-    minlength="5"
-    maxlength="7"/>
-    <label for="price">price</label>
-  </div>
-  <div *ngIf="(price.invalid && price.touched)  || price.dirty">
-    <div class="alert alert-danger" *ngIf="price.errors?.['required']">
-       Требуется price
-    </div>
-    <div class="alert alert-danger" *ngIf="price.errors?.['minlength']">
-       Минимум 5 символов
-    </div>
-    <div class="alert alert-danger" *ngIf="price.errors?.['maxlength']">
-       Максимум 7 символов
+<form  (ngSubmit)="onSubmit()" #form="ngForm">
+   <h1 class="h3 mb-3 fw-normal">Добавить машину</h1>
+    <div class="form-floating">
+     <input
+     type="text"
+     name="brend"
+     class="form-control"
+     id="brend"
+     placeholder="Имя"
+     [(ngModel)]="car.brend"
+     #brend="ngModel"
+     required
+     maxlength="10"
+     minlength="3"
+    />
+     <label for="brend">brend</label>
    </div>
-   </div> 
+  <div *ngIf="(brend.invalid && brend.touched)  || brend.dirty">
+     <div class="alert alert-danger" *ngIf="brend.errors?.['required']">Требуется brend</div>
+  </div>
+  <div class="alert alert-danger" *ngIf="brend.errors?.['maxlength']">
+     Максимум 10 символов
+  </div>
+  <div class="alert alert-danger" *ngIf="brend.errors?.['minlength']">
+     минимум 3 символов
+  </div>
+ 
+ 
+  <div class="form-floating">
+     <input
+     type="text"
+     name="model"
+     class="form-control"
+     id="model"
+     placeholder="model"
+     [(ngModel)]="car.model"
+     #model="ngModel"
+     required
+     maxlength="10"
+     minlength="3"
+      />
+     <label for="model">model</label>
+  </div>
+  <div *ngIf="(model.invalid && model.touched)  || model.dirty">
+     <div class="alert alert-danger" *ngIf="model.errors?.['required']">
+       Требуется model</div>
+  </div>
+  <div class="alert alert-danger" *ngIf="model.errors?.['maxlength']">
+   Максимум 10 символов
+  </div>
+  <div class="alert alert-danger" *ngIf="model.errors?.['minlength']">
+   min 3 символов
+  </div>
+ 
+ 
+   <div class="form-floating">
+     <input
+     type="namber"
+     name="price"
+    class="form-control"
+     id="price"
+     placeholder="price"
+     #price="ngModel"
+    [(ngModel)]="car.price"
+     required
+     minlength="5"
+     maxlength="7"/>
+     <label for="price">price</label>
+   </div>
+   <div *ngIf="(price.invalid && price.touched)  || price.dirty">
+     <div class="alert alert-danger" *ngIf="price.errors?.['required']">
+        Требуется price
+     </div>
+     <div class="alert alert-danger" *ngIf="price.errors?.['minlength']">
+        Минимум 5 символов
+     </div>
+     <div class="alert alert-danger" *ngIf="price.errors?.['maxlength']">
+        Максимум 7 символов
+    </div>
+    </div>
+ 
+ 
+   <button   type="submit" class="w-100 btn btn-lg btn-primary"  >Добавить</button>
+   <button  routerLink="/cars"  type="submit" class="w-100 btn btn-lg btn-primary"  >К списку машин</button>
 
-
-  <button [disabled]="profileForm.invalid" type="submit" class="w-100 btn btn-lg btn-primary"   >Добавить</button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2022–2022</p>
-</form> -->
-
-
-<!-- 
-<div class="input_wrapper">
-   <input type="text" class="input mr-2" placeholder="Введите имя" #nameInput>
-   <button routerLink="/cars" class="button" (click)="enterName(nameInput)">
-     Добавить студента
-   </button>
- </div> -->
+ </form>
+<router-outlet></router-outlet>
